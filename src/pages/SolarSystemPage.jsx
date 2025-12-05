@@ -16,12 +16,12 @@ export default function SolarSystemPage() {
     { name: "Neptune", url: "/models/neptune.glb", distance: 18, size: 0.65, speed: 0.25 }
   ];
 
-  // Load the background texture
+
   const bgTexture = useLoader(TextureLoader, "/images/background.jpg");
 
   return (
     <>
-      {/* 3D Canvas */}
+    
       <Canvas
         style={{
           position: "fixed",
@@ -33,7 +33,7 @@ export default function SolarSystemPage() {
         }}
         camera={{ position: [0, 12, 35], fov: 48 }}
       >
-        {/* Sky Sphere */}
+        
         <mesh>
           <sphereGeometry args={[150, 32, 32]} />
           <meshBasicMaterial map={bgTexture} side={2} />
@@ -42,10 +42,10 @@ export default function SolarSystemPage() {
         <ambientLight intensity={0.6} />
         <pointLight intensity={4} position={[0, 0, 0]} />
 
-        {/* Sun */}
+      
         <Planet url="/models/sun.glb" distance={0} size={0.1} speed={0.14} name="Sun" />
 
-        {/* Other planets */}
+       
         {planets.map((p, index) => (
           <Planet key={index} {...p} />
         ))}
@@ -53,7 +53,7 @@ export default function SolarSystemPage() {
         <OrbitControls enableZoom={false} enablePan={false} />
       </Canvas>
 
-      {/* UI OVERLAY */}
+      
       <div
         style={{
           position: "fixed",
@@ -65,7 +65,7 @@ export default function SolarSystemPage() {
           pointerEvents: "none"
         }}
       >
-        {/* LOGO TOP LEFT */}
+     
         <Link to="/home">
           <img
             src="/images/logo.png"
@@ -80,7 +80,7 @@ export default function SolarSystemPage() {
           />
         </Link>
 
-        {/* MENU TOP RIGHT */}
+        
         <Link to="/menu">
           <div
             style={{
@@ -98,7 +98,7 @@ export default function SolarSystemPage() {
           </div>
         </Link>
 
-        {/* EXPEDITIONS BOTTOM LEFT */}
+        
         <Link to="/expeditions">
           <div
             style={{
@@ -116,7 +116,7 @@ export default function SolarSystemPage() {
           </div>
         </Link>
 
-        {/* ALIENS BOTTOM RIGHT */}
+       
         <Link to="/aliens">
           <div
             style={{
