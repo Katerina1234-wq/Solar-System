@@ -21,11 +21,10 @@ export default function Planet({ url, distance, size, speed, name }) {
       <mesh
         ref={planetRef}
         position={[distance, 0, 0]}
-        scale={[size, size, size]}
         onPointerOver={() => setHovered(true)}
         onPointerOut={() => setHovered(false)}
       >
-        <primitive object={scene} />
+        <primitive object={scene} scale={size} />
       </mesh>
 
       {hovered && (

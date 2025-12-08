@@ -1,4 +1,4 @@
-import { Canvas, useLoader } from "@react-three/fiber";
+import { Canvas} from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { TextureLoader } from "three";
 import Planet from "../components/Planet";
@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 
 export default function SolarSystemPage() {
   const planets = [
-    { name: "Mercury", url: "/models/mercury.glb", distance: 3.5, size: 0.22, speed: 1.2 },
+    { name: "Mercury", url: "/models/mercury.glb", distance: 3.5, size: 0.3, speed: 1.2 },
     { name: "Venus", url: "/models/venus.glb", distance: 5, size: 0.3, speed: 1.0 },
     { name: "Earth", url: "/models/earth.glb", distance: 6.2, size: 0.34, speed: 0.8 },
-    { name: "Mars", url: "/models/mars.glb", distance: 7.8, size: 0.3, speed: 0.6 },
+    { name: "Mars", url: "/models/mars.glb", distance: 7.8, size: 0.35, speed: 0.6 },
     { name: "Jupiter", url: "/models/jupiter.glb", distance: 10.5, size: 0.9, speed: 0.45 },
     { name: "Saturn", url: "/models/saturn.glb", distance: 13, size: 0.8, speed: 0.35 },
     { name: "Uranus", url: "/models/uranus.glb", distance: 15.5, size: 0.7, speed: 0.3 },
@@ -17,7 +17,7 @@ export default function SolarSystemPage() {
   ];
 
 
-  const bgTexture = useLoader(TextureLoader, "/images/background.jpg");
+ 
 
   return (
     <>
@@ -34,10 +34,7 @@ export default function SolarSystemPage() {
         camera={{ position: [0, 12, 35], fov: 48 }}
       >
         
-        <mesh>
-          <sphereGeometry args={[150, 32, 32]} />
-          <meshBasicMaterial map={bgTexture} side={2} />
-        </mesh>
+        
 
         <ambientLight intensity={0.6} />
         <pointLight intensity={4} position={[0, 0, 0]} />
@@ -65,7 +62,7 @@ export default function SolarSystemPage() {
           pointerEvents: "none"
         }}
       >
-     
+        {/* LOGO TOP LEFT */}
         <Link to="/home">
           <img
             src="/images/logo.png"
