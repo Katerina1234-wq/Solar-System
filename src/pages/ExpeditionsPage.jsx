@@ -1,20 +1,36 @@
+import React from "react";
+
 export default function ExpeditionsPage() {
   const cards = [
-    { title: "Orbit the Earth – Vostok I", image: "/orbit-earth-vostok.jpg" },
-    { title: "Salyut program", image: "/salyut.jpg" },
-    { title: "Mission", image: "/mission1.jpg" },
-    { title: "Mission", image: "/mission2.jpg" },
-    { title: "Mission", image: "/mission3.jpg" },
-    { title: "Mission", image: "/mission4.jpg" },
+    { title: "Orbit the Earth – Vostok I", image: "/images/earth.png" },
+    { title: "Salyut program", image: "/images/program.png" },
+    { title: "Mission", image: "/images/mission.png" },
+    { title: "Mission", image: "/images/mission.png" },
+    { title: "Mission", image: "/images/mission.png" },
+    { title: "Mission", image: "/images/mission.png" },
   ];
 
   return (
-    <div className="min-h-screen bg-[url('/space-bg.jpg')] bg-cover bg-center text-white p-6">
-      <h1 className="text-5xl text-center font-light mb-10">Expeditions</h1>
+    <div className="min-h-screen bg-[url('/images/backgroundd.jpg')] bg-cover bg-center text-white">
+
+      {/* NAVIGATION BAR */}
+      <nav className="w-full bg-black/30 backdrop-blur-md py-4 px-8 flex items-center justify-between shadow-lg">
+        <div className="flex items-center gap-3">
+          <img src="/images/logo.png" alt="Logo" className="w-10 h-10" />
+        </div>
+
+        <ul className="flex gap-10 text-lg font-light">
+          <li className="hover:text-purple-300 cursor-pointer">Menu</li>
+          <li className="hover:text-purple-300 cursor-pointer">Aliens</li>
+          <li className="hover:text-purple-300 cursor-pointer">Expeditions</li>
+        </ul>
+      </nav>
+
+      <h1 className="text-5xl text-center font-light mb-10 mt-10">Expeditions</h1>
 
       {/* Filters */}
       <div className="flex justify-center gap-4 mb-10 flex-wrap">
-        <select className="bg-white/20 px-4 py-2 rounded-lg backdrop-blur-md">
+        <select className="bg-black/20 px-4 py-2 rounded-lg backdrop-blur-md">
           <option>Mission Timeline</option>
           <option>Past Missions</option>
           <option>Current Missions</option>
@@ -46,7 +62,7 @@ export default function ExpeditionsPage() {
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto p-6">
         {cards.map((card, index) => (
           <div
             key={index}
