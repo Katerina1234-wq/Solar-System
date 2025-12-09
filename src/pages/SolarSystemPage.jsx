@@ -1,28 +1,20 @@
-import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
+import { Canvas, useLoader, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { TextureLoader } from "three";
 import Planet from "../components/Planet";
 import { Link } from "react-router-dom";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
-
+// Static background component
 function Background({ url }) {
   const texture = useLoader(TextureLoader, url);
-  const { camera, viewport } = useThree();
-  const meshRef = useRef();
-
-  useFrame(() => {
-    if (meshRef.current) {
-     
-      meshRef.current.position.copy(camera.position);
-      meshRef.current.position.z -= 55; // behind camera
-    }
-  });
+  const { viewport } = useThree();
 
   return (
-    <mesh ref={meshRef} renderOrder={-1}>
-      <planeGeometry args={[viewport.width * 1, viewport.height * 1]} />
-      <meshBasicMaterial map={texture}  />
+    <mesh position={[0, 0, -50]} renderOrder={-1}>
+      {/* Make the plane large enough to fill the viewport */}
+      <planeGeometry args={[viewport.width * 3, viewport.height * 3]} />
+      <meshBasicMaterial map={texture} />
     </mesh>
   );
 }
@@ -48,17 +40,17 @@ export default function SolarSystemPage() {
       <Canvas
         style={{ position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", zIndex: 1 }}
         camera={{ position: [0, 12, 35], fov: 48 }}
-         gl={{ alpha: false }}
-  onCreated={({ gl }) => {
-    gl.setClearColor("black");
-  }}
+        gl={{ alpha: false }}
+        onCreated={({ gl }) => {
+          gl.setClearColor("black");
+        }}
       >
-        {/* Background that stays always visible */}
+        {/* Static background */}
         <Background url="/images/backgroundd.jpg" />
 
         {/* Lights */}
-        <ambientLight intensity={1.5} />
-        <pointLight position={[0, 0, 0]} intensity={4} />
+        <ambientLight intensity={1.8} />
+        <pointLight position={[0, 0, 0]} intensity={6} />
 
         {/* Sun */}
         <Planet url="/models/sun.glb" distance={0} size={0.1} speed={0.14} name="Sun" />
