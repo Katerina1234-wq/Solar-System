@@ -5,15 +5,15 @@ import Planet from "../components/Planet";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-// Static background component
+// background 
 function Background({ url }) {
   const texture = useLoader(TextureLoader, url);
   const { viewport } = useThree();
 
   return (
     <mesh position={[0, 0, -50]} renderOrder={-1}>
-      {/* Make the plane large enough to fill the viewport */}
-      <planeGeometry args={[viewport.width * 3, viewport.height * 3]} />
+      {/* playing with the plane*/}
+      <planeGeometry args={[viewport.width * 3, viewport.height * 4.5]} />
       <meshBasicMaterial map={texture} />
     </mesh>
   );
@@ -45,17 +45,17 @@ export default function SolarSystemPage() {
           gl.setClearColor("black");
         }}
       >
-        {/* Static background */}
+        {/*  background */}
         <Background url="/images/backgroundd.jpg" />
 
-        {/* Lights */}
+        {/* lights */}
         <ambientLight intensity={1.8} />
         <pointLight position={[0, 0, 0]} intensity={6} />
 
-        {/* Sun */}
+        {/* sun */}
         <Planet url="/models/sun.glb" distance={0} size={0.1} speed={0.14} name="Sun" />
 
-        {/* Planets */}
+        {/* planets */}
         {planets.map((p, i) => (
           <Planet key={i} {...p} />
         ))}
@@ -63,7 +63,7 @@ export default function SolarSystemPage() {
         <OrbitControls enableZoom={false} enablePan={false} />
       </Canvas>
 
-      {/* UI overlay */}
+     
       <div
         style={{
           position: "fixed",
