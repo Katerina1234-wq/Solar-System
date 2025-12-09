@@ -5,7 +5,7 @@ import Planet from "../components/Planet";
 import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 
-// Background component that always stays behind everything
+
 function Background({ url }) {
   const texture = useLoader(TextureLoader, url);
   const { camera, viewport } = useThree();
@@ -13,9 +13,9 @@ function Background({ url }) {
 
   useFrame(() => {
     if (meshRef.current) {
-      // Make the plane follow the camera so it’s always behind
+     
       meshRef.current.position.copy(camera.position);
-      meshRef.current.position.z -= 55; // slightly behind camera
+      meshRef.current.position.z -= 55; // behind camera
     }
   });
 
