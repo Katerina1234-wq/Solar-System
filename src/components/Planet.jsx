@@ -36,7 +36,7 @@ export default function Planet({ url, distance, size, speed, name }) {
               color: "white",
               background: "rgba(0,0,0,0.5)",
               borderRadius: "6px",
-              fontSize: "14px",
+              fontSize: "45px",
               fontWeight: "bold",
               textShadow: "0 0 4px black"
             }}

@@ -22,21 +22,21 @@ function Background({ url }) {
   return (
     <mesh ref={meshRef} renderOrder={-1}>
       <planeGeometry args={[viewport.width * 1, viewport.height * 1]} />
-      <meshBasicMaterial map={texture} />
+      <meshBasicMaterial map={texture}  />
     </mesh>
   );
 }
 
 export default function SolarSystemPage() {
   const planets = [
-    { name: "Mercury", url: "/models/mercury.glb", distance: 3.5, size: 0.40, speed: 1.2 },
+    { name: "Mercury", url: "/models/mercury.glb", distance: 3.5, size: 0.40, speed: 1.1 },
     { name: "Venus", url: "/models/venus.glb", distance: 5, size: 0.50, speed: 1.0 },
-    { name: "Earth", url: "/models/earth.glb", distance: 6.2, size: 0.35, speed: 0.8 },
+    { name: "Earth", url: "/models/earth.glb", distance: 6.2, size: 0.005, speed: 0.8 },
     { name: "Mars", url: "/models/mars.glb", distance: 7.8, size: 0.30, speed: 0.6 },
-    { name: "Jupiter", url: "/models/jupiter.glb", distance: 10.5, size: 1.3, speed: 0.45 },
-    { name: "Saturn", url: "/models/saturn.glb", distance: 13, size: 1.1, speed: 0.35 },
+    { name: "Jupiter", url: "/models/jupiter.glb", distance: 10.5, size: 1.2, speed: 0.45 },
+    { name: "Saturn", url: "/models/saturn.glb", distance: 13, size: 1, speed: 0.35 },
     { name: "Uranus", url: "/models/uranus.glb", distance: 15.5, size: 0.70, speed: 0.3 },
-    { name: "Neptune", url: "/models/neptune.glb", distance: 18, size: 0.65, speed: 0.25 }
+    { name: "Neptune", url: "/models/neptune.glb", distance: 18, size: 0.08, speed: 0.25 }
   ];
 
   const [hoverMenu, setHoverMenu] = useState(false);
@@ -48,12 +48,16 @@ export default function SolarSystemPage() {
       <Canvas
         style={{ position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", zIndex: 1 }}
         camera={{ position: [0, 12, 35], fov: 48 }}
+         gl={{ alpha: false }}
+  onCreated={({ gl }) => {
+    gl.setClearColor("black");
+  }}
       >
         {/* Background that stays always visible */}
         <Background url="/images/backgroundd.jpg" />
 
         {/* Lights */}
-        <ambientLight intensity={0.6} />
+        <ambientLight intensity={1.5} />
         <pointLight position={[0, 0, 0]} intensity={4} />
 
         {/* Sun */}
