@@ -5,7 +5,9 @@ import MenuPage from "./pages/MenuPage";
 import ExpeditionsPage from "./pages/ExpeditionsPage";
 import AliensPage from "./pages/AliensPage";
 
+
 function App() {
+  
   return (
     <Router>
       <Routes>
