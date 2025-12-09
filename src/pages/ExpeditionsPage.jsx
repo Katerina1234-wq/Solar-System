@@ -13,22 +13,22 @@ export default function ExpeditionsPage() {
   return (
     <div className="min-h-screen bg-[url('/images/backgroundd.jpg')] bg-cover bg-center text-white">
 
-      {/* NAVIGATION BAR */}
+      {/* navigation bar */}
       <nav className="w-full bg-black/30 backdrop-blur-md py-4 px-8 flex items-center justify-between shadow-lg">
         <div className="flex items-center gap-3">
-          <img src="/images/logo.png" alt="Logo" className="w-10 h-10" />
+          <img src="/images/logo.png" alt="Logo" className="w-16 h-18" />
         </div>
 
-        <ul className="flex gap-10 text-lg font-light">
+        <ul className="flex gap-10 text-lg font-serif">
           <li className="hover:text-purple-300 cursor-pointer">Menu</li>
           <li className="hover:text-purple-300 cursor-pointer">Aliens</li>
           <li className="hover:text-purple-300 cursor-pointer">Expeditions</li>
         </ul>
       </nav>
 
-      <h1 className="text-5xl text-center font-light mb-10 mt-10">Expeditions</h1>
+      <h1 className="text-6xl text-center font-serif mb-10 mt-10">Expeditions</h1>
 
-      {/* Filters */}
+      {/* filters */}
       <div className="flex justify-center gap-4 mb-10 flex-wrap">
         <select className="bg-black/20 px-4 py-2 rounded-lg backdrop-blur-md">
           <option>Mission Timeline</option>
@@ -37,7 +37,7 @@ export default function ExpeditionsPage() {
           <option>Future Missions</option>
         </select>
 
-        <select className="bg-white/20 px-4 py-2 rounded-lg backdrop-blur-md">
+        <select className="bg-black/20 px-4 py-2 rounded-lg backdrop-blur-md">
           <option>Destination</option>
           <option>Moon</option>
           <option>Mars</option>
@@ -46,7 +46,7 @@ export default function ExpeditionsPage() {
           <option>Deep Space</option>
         </select>
 
-        <select className="bg-white/20 px-4 py-2 rounded-lg backdrop-blur-md">
+        <select className="bg-black/20 px-4 py-2 rounded-lg backdrop-blur-md">
           <option>Organizations</option>
           <option>Soviet Union</option>
           <option>FlyBy</option>
@@ -61,7 +61,7 @@ export default function ExpeditionsPage() {
         </button>
       </div>
 
-      {/* Cards */}
+      {/* cards*/}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto p-6">
         {cards.map((card, index) => (
           <div
