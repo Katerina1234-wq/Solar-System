@@ -91,7 +91,7 @@ export default function SolarSystemPage() {
               top: "25px",
               right: "35px",
               fontSize: "35px",
-              color: hoverMenu ? "#8ADBD5" : "white",
+              color: hoverMenu ? "#8E91CF" : "white",
               letterSpacing: "1px",
               cursor: "pointer",
               pointerEvents: "auto",
@@ -112,7 +112,7 @@ export default function SolarSystemPage() {
               left: "35px",
               fontSize: "35px",
               fontWeight: 400,
-              color: hoverExpeditions ? "#8ADBD5" : "white",
+              color: hoverExpeditions ? "#8E91CF" : "white",
               cursor: "pointer",
               pointerEvents: "auto",
               transition: "color 0.2s ease"
@@ -132,7 +132,7 @@ export default function SolarSystemPage() {
               right: "35px",
               fontSize: "35px",
               fontWeight: 400,
-              color: hoverAliens ? "#8ADBD5" : "white",
+              color: hoverAliens ? "#8E91CF" : "white",
               cursor: "pointer",
               pointerEvents: "auto",
               transition: "color 0.2s ease"
