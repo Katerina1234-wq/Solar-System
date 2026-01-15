@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function AliensPage() {
   const audioRef = useRef(null);
@@ -30,19 +31,47 @@ export default function AliensPage() {
 
       {/* NAV BAR */}
       <nav className="w-full bg-black/40 backdrop-blur-md py-4 px-10 flex items-center justify-between shadow-xl fixed top-0 z-40 animate-fade-up delay-1">
-        <img src="/images/logo.png" alt="Logo" className="w-14" />
+        {/* Logo */}
+        <Link to="/">
+          <img src="/images/logo.png" alt="Logo" className="w-14" />
+        </Link>
+
+        {/* Nav Items */}
         <ul className="flex gap-10 text-lg font-serif tracking-wide">
-          <li className="hover:text-purple-300 cursor-pointer">Menu</li>
-          <li className="hover:text-purple-300 cursor-pointer">Aliens</li>
-          <li className="hover:text-purple-300 cursor-pointer underline">Expeditions</li>
+          <li>
+            <Link
+              to="/"
+              className="hover:text-purple-300 transition"
+            >
+              Home page
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/aliens"
+              className="hover:text-purple-300 underline transition"
+            >
+              Aliens
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/expeditions"
+              className="hover:text-purple-300 transition"
+            >
+              Expeditions
+            </Link>
+          </li>
         </ul>
       </nav>
 
+      {/* PAGE CONTENT */}
       <div className="pt-28 max-w-6xl mx-auto px-6 space-y-36 pb-36">
 
         {/* HERO */}
         <section className="text-center space-y-10 animate-fade-up">
-
           <h1 className="text-7xl font-serif font-bold drop-shadow-[0_0_25px_rgba(150,100,255,0.6)] animate-fade-up delay-1">
             Aliens
           </h1>
@@ -142,7 +171,7 @@ export default function AliensPage() {
         <section className="text-center space-y-6 animate-fade-up">
           <h2 className="text-4xl font-extrabold text-white-300">Conclusion: Are We Alone?</h2>
           <p className="text-gray-200 text-lg font-medium leading-relaxed max-w-4xl mx-auto">
-            There is no confirmed evidence of alien civilizations yet. However, the universe is vast, life’s building blocks are common and Habitable environments are widespread.
+            There is no confirmed evidence of alien civilizations yet. However, the universe is vast, life’s building blocks are common and habitable environments are widespread.
             The question may not be if alien civilizations exist—but how and when we will discover them.
             As technology advances, humanity stands at the edge of one of the greatest discoveries in history.
           </p>
@@ -153,25 +182,20 @@ export default function AliensPage() {
   );
 }
 
-/* SECTION 3–6 */
+/* SECTION COMPONENTS */
 function SectionWithImageTop({ title, text, image }) {
   return (
     <section className="flex flex-col items-center space-y-10 animate-fade-up">
-
       <div className="max-w-4xl text-left space-y-4 animate-fade-up delay-1">
         <h2 className="text-3xl font-extrabold text-white-300 text-center animate-fade-up delay-2">
           {title}
         </h2>
-
         <div className="text-gray-200 text-lg font-medium leading-relaxed space-y-2 animate-fade-up delay-3">
           {text.map((line, i) => (
-            <p key={i} className={line.startsWith("•") ? "ml-6" : ""}>
-              {line}
-            </p>
+            <p key={i} className={line.startsWith("•") ? "ml-6" : ""}>{line}</p>
           ))}
         </div>
       </div>
-
       <img
         src={image}
         className="w-4/6 rounded-2xl shadow-2xl hover:scale-105 transition duration-500 animate-fade-up delay-4"
@@ -181,23 +205,15 @@ function SectionWithImageTop({ title, text, image }) {
   );
 }
 
-/* SECTION 2 */
 function SectionWithSideImage({ title, text, image }) {
   return (
     <section className="flex flex-col lg:flex-row items-center gap-20 animate-fade-up">
-
       <div className="lg:w-1/2 space-y-6 animate-fade-up delay-1">
-        <h2 className="text-3xl font-extrabold text-white-300 animate-fade-up delay-2">
-          {title}
-        </h2>
-
+        <h2 className="text-3xl font-extrabold text-white-300 animate-fade-up delay-2">{title}</h2>
         <div className="text-gray-200 text-lg font-medium leading-relaxed space-y-2 animate-fade-up delay-3">
-          {text.map((line, i) => (
-            <p key={i}>{line}</p>
-          ))}
+          {text.map((line, i) => (<p key={i}>{line}</p>))}
         </div>
       </div>
-
       <img
         src={image}
         className="lg:w-5/12 rounded-2xl shadow-2xl hover:scale-105 transition duration-500 animate-fade-up delay-4"
@@ -206,5 +222,3 @@ function SectionWithSideImage({ title, text, image }) {
     </section>
   );
 }
-
-

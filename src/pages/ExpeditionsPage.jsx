@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export default function ExpeditionsPage() {
@@ -31,20 +31,31 @@ export default function ExpeditionsPage() {
 
       {/* NAV BAR */}
       <nav className="w-full bg-black/30 backdrop-blur-md py-4 px-8 flex items-center justify-between shadow-xl">
-        <img src="/images/logo.png" alt="Logo" className="w-16 h-18" />
+        {/* Logo */}
+        <Link to="/">
+          <img src="/images/logo.png" alt="Logo" className="w-16 h-18" />
+        </Link>
 
+        {/* Navigation Items */}
         <ul className="flex gap-10 text-lg font-serif">
-          <li className="hover:text-purple-300 cursor-pointer">Menu</li>
-          <li className="hover:text-purple-300 cursor-pointer">Aliens</li>
-          <li className="hover:text-purple-300 cursor-pointer underline">Expeditions</li>
+          <li className="hover:text-purple-300 cursor-pointer">
+            <Link to="/" className="hover:text-purple-300">Home Page</Link>
+          </li>
+          <li className="hover:text-purple-300 cursor-pointer">
+            <Link to="/aliens" className="hover:text-purple-300">Aliens</Link>
+          </li>
+          <li className="hover:text-purple-300 cursor-pointer underline">
+            <Link to="/expeditions" className="hover:text-purple-300 underline">Expeditions</Link>
+          </li>
         </ul>
       </nav>
 
+      {/* PAGE TITLE */}
       <h1 className="text-6xl text-center font-serif mb-10 mt-10">
         Expeditions
       </h1>
 
-      {/* filter */}
+      {/* FILTER */}
       <div className="flex justify-center mb-12 px-4">
         <div className="bg-white/10 backdrop-blur-md px-5 py-4 rounded-3xl shadow-2xl flex gap-7 flex-wrap items-end">
 
