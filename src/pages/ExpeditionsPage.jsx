@@ -20,7 +20,7 @@ export default function ExpeditionsPage() {
     { id:"artemis", timeline:"Future Missions", destination:"Moon", organization:"Crewed", image:"/images/artemis.png" },
   ];
 
-  const filteredCards = cards.filter((c) =>
+  const filteredCards = cards.filter((c) => 
     (!timeline || c.timeline === timeline) &&
     (!destination || c.destination === destination) &&
     (!organization || c.organization === organization)

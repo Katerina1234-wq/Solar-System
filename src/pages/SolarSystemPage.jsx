@@ -12,7 +12,6 @@ function Background({ url }) {
 
   return (
     <mesh position={[0, 0, -50]} renderOrder={-1}>
-      {/* playing with the plane*/}
       <planeGeometry args={[viewport.width * 3, viewport.height * 4.5]} />
       <meshBasicMaterial map={texture} />
     </mesh>
@@ -63,7 +62,7 @@ export default function SolarSystemPage() {
         <OrbitControls enableZoom={false} enablePan={false} />
       </Canvas>
 
-     
+      {/* ---------- UI OVERLAY ---------- */}
       <div
         style={{
           position: "fixed",
@@ -75,6 +74,24 @@ export default function SolarSystemPage() {
           pointerEvents: "none"
         }}
       >
+
+        <div
+          style={{
+            position: "absolute",
+            top: "23px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            color: "white",
+            fontSize: "48px",
+            fontWeight: 390,
+            letterSpacing: "2px",
+            textShadow: "0px 0px 10px rgba(0,0,0,0.5)",
+            pointerEvents: "none",
+          }}
+        >
+          Explore the Solar System
+        </div>
+
         <Link to="/home">
           <img
             src="/images/logo.png"
