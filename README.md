@@ -1,15 +1,65 @@
-# React + Vite
+# Solar System Interactive Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An immersive, educational, and interactive web experience that allows users to explore the Solar System through engaging design, animations, and 3D models.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Overview
 
-## React Compiler
+The website allows users to:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Explore the Solar System  
+- Learn about planets and celestial bodies  
+- Interact with 3D models  
+- Experience smooth transitions and animations  
+
+The project combines **design thinking, user research, and modern web development** to create an engaging learning platform.
+
+
+
+###  Implementation 
+- Built the website from the finalized design  
+- Integrated fully interactive **3D models**  
+- Used **GSAP** and **Framer Motion** for smooth animations  
+- Implemented additional pages and features  
+- Improved code structure through continuous refactoring  
+- Maintained documentation and version control using Git  
+
+##  Technologies Used
+
+- React, Tailwind CSS, JavaScript  
+- GSAP – animations  
+- Framer Motion – transitions & motion effects  
+- Figma – UI/UX design  
+- Maze – user testing & feedback  
+- Git & GitHub – version control  
+
+## Installation & Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/solar-system-project.git
+
+2. open the folder
+cd solar-system-project
+
+3. Run the project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Expanding the ESLint configuration
 
