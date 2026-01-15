@@ -2,3 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-up { animation: fadeUp 1s ease-out forwards; }
+.animate-fade-in { animation: fadeIn 1.2s ease-out forwards; }
+
+.delay-1 { animation-delay: 0.8s }
+.delay-2 { animation-delay: 0.10s }
+.delay-3 { animation-delay: 0.15s }
+.delay-4 { animation-delay: 0.18s }
+
