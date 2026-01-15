@@ -36,7 +36,7 @@ function SpaceMenu({ open, closeMenu }) {
         padding: "90px 40px",
         color: "white",
         boxShadow: "-10px 0px 40px rgba(0,0,0,0.45)",
-        pointerEvents: "auto" // ✅ IMPORTANT
+        pointerEvents: "auto"
       }}
     >
       <div
@@ -100,8 +100,12 @@ export default function SolarSystemPage() {
   const [hoverAliens, setHoverAliens] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // New state for hovered planet
+  const [hoveredPlanet, setHoveredPlanet] = useState(null);
+
   return (
     <>
+      {/* -------------------- 3D CANVAS -------------------- */}
       <Canvas
         style={{
           position: "fixed",
@@ -110,7 +114,7 @@ export default function SolarSystemPage() {
           width: "100vw",
           height: "100vh",
           zIndex: 1,
-          pointerEvents: "none" // ✅ prevents UI conflicts
+          pointerEvents: "auto"
         }}
         camera={{ position: [0, 12, 35], fov: 48 }}
         gl={{ alpha: false }}
@@ -121,10 +125,23 @@ export default function SolarSystemPage() {
         <ambientLight intensity={1.8} />
         <pointLight position={[0, 0, 0]} intensity={6} />
 
-        <Planet url="/models/sun.glb" distance={0} size={0.1} speed={0.14} name="Sun" />
+        <Planet
+          url="/models/sun.glb"
+          distance={0}
+          size={0.1}
+          speed={0.14}
+          name="Sun"
+          onPointerOver={() => setHoveredPlanet("Sun")}
+          onPointerOut={() => setHoveredPlanet(null)}
+        />
 
         {planets.map((p, i) => (
-          <Planet key={i} {...p} />
+          <Planet
+            key={i}
+            {...p}
+            onPointerOver={() => setHoveredPlanet(p.name)}
+            onPointerOut={() => setHoveredPlanet(null)}
+          />
         ))}
 
         <OrbitControls enableZoom={false} enablePan={false} />
@@ -139,6 +156,7 @@ export default function SolarSystemPage() {
           pointerEvents: "none"
         }}
       >
+        {/* Title */}
         <div
           style={{
             position: "absolute",
@@ -153,6 +171,7 @@ export default function SolarSystemPage() {
           Explore the Solar System
         </div>
 
+        {/* Logo */}
         <Link to="/home">
           <img
             src="/images/logo.png"
@@ -167,6 +186,7 @@ export default function SolarSystemPage() {
           />
         </Link>
 
+        {/* Menu */}
         <div
           onClick={() => setMenuOpen(true)}
           onMouseEnter={() => setHoverMenu(true)}
@@ -184,6 +204,7 @@ export default function SolarSystemPage() {
           Menu
         </div>
 
+        {/* Expeditions */}
         <Link to="/expeditions">
           <div
             onMouseEnter={() => setHoverExpeditions(true)}
@@ -202,6 +223,7 @@ export default function SolarSystemPage() {
           </div>
         </Link>
 
+        {/* Aliens */}
         <Link to="/aliens">
           <div
             onMouseEnter={() => setHoverAliens(true)}
@@ -219,8 +241,28 @@ export default function SolarSystemPage() {
             Aliens
           </div>
         </Link>
+
+        {/* -------------------- Hovered Planet Name -------------------- */}
+        {hoveredPlanet && (
+          <div
+            style={{
+              position: "absolute",
+              bottom: "120px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              color: "white",
+              fontSize: "36px",
+              letterSpacing: "1.5px",
+              pointerEvents: "none",
+              textShadow: "0 0 10px black"
+            }}
+          >
+            {hoveredPlanet}
+          </div>
+        )}
       </div>
 
+      {/* -------------------- SPACE MENU -------------------- */}
       <SpaceMenu open={menuOpen} closeMenu={() => setMenuOpen(false)} />
     </>
   );
