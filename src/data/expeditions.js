@@ -4,8 +4,7 @@ export const expeditions = {
     date: "April 12, 1961",
     heroImage: "/images/vostok-hero.jpg",
     description:
-      "Vostok 1 was the first human spaceflight in history. Soviet cosmonaut Yuri Gagarin became the first person to orbit Earth.",
-    duration: "1 hour 48 minutes",
+      "The Vostok program (1961–1963) was the Soviet Union's first human spaceflight program, which launched six successful crewed missions.",
     crew: ["Yuri Gagarin"],
     content: `
 The Vostok program (1961–1963) was the Soviet Union’s first human spaceflight program.

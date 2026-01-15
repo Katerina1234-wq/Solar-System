@@ -35,7 +35,8 @@ function SpaceMenu({ open, closeMenu }) {
         zIndex: 20,
         padding: "90px 40px",
         color: "white",
-        boxShadow: "-10px 0px 40px rgba(0,0,0,0.45)"
+        boxShadow: "-10px 0px 40px rgba(0,0,0,0.45)",
+        pointerEvents: "auto" // ✅ IMPORTANT
       }}
     >
       <div
@@ -102,7 +103,15 @@ export default function SolarSystemPage() {
   return (
     <>
       <Canvas
-        style={{ position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", zIndex: 1 }}
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: 1,
+          pointerEvents: "none" // ✅ prevents UI conflicts
+        }}
         camera={{ position: [0, 12, 35], fov: 48 }}
         gl={{ alpha: false }}
         onCreated={({ gl }) => gl.setClearColor("black")}
@@ -138,8 +147,7 @@ export default function SolarSystemPage() {
             transform: "translateX(-50%)",
             color: "white",
             fontSize: "48px",
-            letterSpacing: "2px",
-            textShadow: "0px 0px 10px rgba(0,0,0,0.5)"
+            letterSpacing: "2px"
           }}
         >
           Explore the Solar System
@@ -148,7 +156,14 @@ export default function SolarSystemPage() {
         <Link to="/home">
           <img
             src="/images/logo.png"
-            style={{ position: "absolute", top: "20px", left: "20px", width: "110px", cursor: "pointer", pointerEvents: "auto" }}
+            style={{
+              position: "absolute",
+              top: "20px",
+              left: "20px",
+              width: "110px",
+              cursor: "pointer",
+              pointerEvents: "auto"
+            }}
           />
         </Link>
 
@@ -162,10 +177,8 @@ export default function SolarSystemPage() {
             right: "35px",
             fontSize: "35px",
             color: hoverMenu ? "#8E91CF" : "white",
-            letterSpacing: "1px",
             cursor: "pointer",
-            pointerEvents: "auto",
-            transition: "color 0.2s ease"
+            pointerEvents: "auto"
           }}
         >
           Menu
@@ -182,8 +195,7 @@ export default function SolarSystemPage() {
               fontSize: "35px",
               color: hoverExpeditions ? "#8E91CF" : "white",
               cursor: "pointer",
-              pointerEvents: "auto",
-              transition: "color 0.2s ease"
+              pointerEvents: "auto"
             }}
           >
             Expeditions
@@ -201,8 +213,7 @@ export default function SolarSystemPage() {
               fontSize: "35px",
               color: hoverAliens ? "#8E91CF" : "white",
               cursor: "pointer",
-              pointerEvents: "auto",
-              transition: "color 0.2s ease"
+              pointerEvents: "auto"
             }}
           >
             Aliens

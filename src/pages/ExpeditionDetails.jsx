@@ -12,7 +12,7 @@ export default function ExpeditionDetails() {
       <div className="min-h-screen bg-black text-white p-10">
         <button
           onClick={() => navigate(-1)}
-          className="mb-6 bg-purple-600 px-6 py-2 rounded-lg"
+          className="mb-6 bg-blue-600 px-6 py-2 rounded-lg"
         >
           ← Back
         </button>
