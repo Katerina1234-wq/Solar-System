@@ -128,10 +128,10 @@ export default function ExpeditionsPage() {
               transition={{ duration: 0.6 }}
             />
 
-            {/* OVERLAY */}
+            
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
 
-            {/* TEXT */}
+            
             <div className="absolute bottom-0 p-6">
               <h2 className="text-2xl font-light mb-3">{card.title}</h2>
 

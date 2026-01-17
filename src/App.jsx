@@ -22,7 +22,7 @@ function App() {
         {/* Expedition Details */}
         <Route path="/expedition/:id" element={<ExpeditionDetails />} />
 
-        {/* 404 fallback */}
+        {/* fallback */}
         <Route
           path="*"
           element={

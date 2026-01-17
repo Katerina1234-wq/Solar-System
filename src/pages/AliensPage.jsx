@@ -15,7 +15,7 @@ export default function AliensPage() {
   return (
     <div className="min-h-screen bg-[url('/images/backgroundalien.jpg')] bg-cover bg-center text-white animate-fade-in">
 
-      {/* MUSIC BUTTON */}
+      {/* music*/}
       <div className="fixed top-20 left-6 z-50 animate-fade-up delay-2">
         <button
           onClick={toggleMusic}
@@ -29,7 +29,7 @@ export default function AliensPage() {
         </audio>
       </div>
 
-      {/* NAV BAR */}
+      {/* nav bar */}
       <nav className="w-full bg-black/40 backdrop-blur-md py-4 px-10 flex items-center justify-between shadow-xl fixed top-0 z-40 animate-fade-up delay-1">
         {/* Logo */}
         <Link to="/">

@@ -82,7 +82,7 @@ function MenuLink({ label, to, closeMenu }) {
   );
 }
 
-/* -------------------- MAIN PAGE -------------------- */
+/* main page */
 export default function SolarSystemPage() {
   const planets = [
     { name: "Mercury", url: "/models/mercury.glb", distance: 3.5, size: 0.4, speed: 1.1 },
@@ -100,12 +100,11 @@ export default function SolarSystemPage() {
   const [hoverAliens, setHoverAliens] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // New state for hovered planet
   const [hoveredPlanet, setHoveredPlanet] = useState(null);
 
   return (
     <>
-      {/* -------------------- 3D CANVAS -------------------- */}
+      {/*3d canvas*/}
       <Canvas
         style={{
           position: "fixed",
@@ -147,7 +146,7 @@ export default function SolarSystemPage() {
         <OrbitControls enableZoom={false} enablePan={false} />
       </Canvas>
 
-      {/* -------------------- UI OVERLAY -------------------- */}
+      {/*overlay */}
       <div
         style={{
           position: "fixed",
@@ -242,7 +241,7 @@ export default function SolarSystemPage() {
           </div>
         </Link>
 
-        {/* -------------------- Hovered Planet Name -------------------- */}
+        {/* hover name for planets */}
         {hoveredPlanet && (
           <div
             style={{
@@ -262,7 +261,7 @@ export default function SolarSystemPage() {
         )}
       </div>
 
-      {/* -------------------- SPACE MENU -------------------- */}
+      
       <SpaceMenu open={menuOpen} closeMenu={() => setMenuOpen(false)} />
     </>
   );
