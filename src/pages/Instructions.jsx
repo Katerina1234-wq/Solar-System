@@ -11,7 +11,7 @@ export default function Instructions() {
         fontFamily: "Arial, sans-serif"
       }}
     >
-      <h1 style={{ fontSize: "52px", marginBottom: "25px" }}>
+      <h1 style={{ fontSize: "53px", marginBottom: "25px" }}>
         Solar System Exploration Guide
       </h1>
 
@@ -101,7 +101,7 @@ export default function Instructions() {
             fontSize: "18px",
             background: "#8E91CF",
             border: "none",
-            borderRadius: "8px",
+            borderRadius: "7px",
             cursor: "pointer",
             color: "black"
           }}
