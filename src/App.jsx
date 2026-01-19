@@ -6,6 +6,7 @@ import MenuPage from "./pages/MenuPage";
 import ExpeditionsPage from "./pages/ExpeditionsPage";
 import AliensPage from "./pages/AliensPage";
 import ExpeditionDetails from "./pages/ExpeditionDetails";
+import Instructions from "./pages/Instructions";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<SolarSystemPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/menu" element={<MenuPage />} />
+         <Route path="/instructions" element={<Instructions />} />
         <Route path="/expeditions" element={<ExpeditionsPage />} />
         <Route path="/aliens" element={<AliensPage />} />
 

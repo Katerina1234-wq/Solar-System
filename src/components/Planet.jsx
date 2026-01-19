@@ -1,17 +1,18 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { useGLTF, Html } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import OrbitPath from "./OrbitPath";
 
-export default function Planet({ url, distance, size, speed, name }) {
+export default function Planet({ url, distance, size, speed, name, paused, setHoveredPlanet }) {
   const { scene } = useGLTF(url);
   const planetRef = useRef();
   const groupRef = useRef();
-  const [hovered, setHovered] = useState(false);
 
   useFrame((state, delta) => {
-    if (groupRef.current) groupRef.current.rotation.y += speed * delta;
-    if (planetRef.current) planetRef.current.rotation.y += 0.5 * delta;
+    if (!paused) {
+      if (groupRef.current) groupRef.current.rotation.y += speed * delta;
+      if (planetRef.current) planetRef.current.rotation.y += 0.5 * delta;
+    }
   });
 
   return (
@@ -22,29 +23,18 @@ export default function Planet({ url, distance, size, speed, name }) {
         ref={planetRef}
         position={[distance, 0, 0]}
         scale={[size, size, size]}
-        onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}
+        onPointerOver={() => {
+          setHoveredPlanet(name);           
+          document.body.style.cursor = "pointer"; 
+        }}
+        onPointerOut={() => {
+          setHoveredPlanet(null);           
+          document.body.style.cursor = "default"; 
+        }}
       >
         <primitive object={scene} />
       </mesh>
-
-      {hovered && (
-        <Html distanceFactor={12} position={[distance, size + 1.1, 0]}>
-          <div
-            style={{
-              padding: "4px 8px",
-              color: "white",
-              background: "rgba(0,0,0,0.5)",
-              borderRadius: "6px",
-              fontSize: "45px",
-              fontWeight: "bold",
-              textShadow: "0 0 4px black"
-            }}
-          >
-            {name}
-          </div>
-        </Html>
-      )}
     </group>
   );
 }
+
