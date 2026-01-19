@@ -23,7 +23,7 @@ export default function ExpeditionDetails() {
   return (
     <div
       className="min-h-screen text-white bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/backgroundd.jpg')" }}
+      style={{ backgroundImage: "url('/images/backgroundalien.jpg')" }}
     >
       {/* HERO */}
       <div className="flex flex-col md:flex-row items-start md:items-center p-10 gap-6">
