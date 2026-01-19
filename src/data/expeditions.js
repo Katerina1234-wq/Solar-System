@@ -171,7 +171,112 @@ The crew wished to name their spacecraft, but NASA did not permit it. They would
 Lunar sphere of influence
 The Service Propulsion System ignited 69 hours after launch and burned for over four minutes, inserting Apollo 8 into lunar orbit. The maneuver had to be precise—too long and the spacecraft would crash, too short and it would drift into space. Once confirmed in orbit, the crew spent 20 hours circling the Moon while Mission Control monitored from Earth.
 `
+},
+
+"viper": {
+  title: "VIPER (Rover)",
+  date: "2027 (Planned)",
+  heroImage: "/images/viper-hero.jpg",
+  description: "VIPER is a NASA lunar rover designed to explore permanently shadowed craters near the lunar south pole and analyze water ice.",
+  crew: ["NASA Ames Research Center", "Science Team", "Mission Operators"],
+  duration: "2027 – TBD",
+  
+  content: `
+Mission Purpose:
+Water is a critical resource for future lunar exploration. VIPER was designed to be the first mission to directly investigate lunar water.
+
+Rover and Operations:
+VIPER is about the size of a golf cart, designed to operate for 100 Earth days, traveling up to 20 km. Equipped with headlights to explore permanently shadowed regions, it would land near Nobile Crater on Mons Mouton.
+
+Mission History:
+VIPER evolved from NASA's Resource Prospector concept, later canceled in 2018. Selected under CLPS, delivered via Blue Moon MK1 lander.
+
+Response and Potential Revival:
+After NASA canceled the mission in July 2024, alternative plans were explored, including partnerships. Blue Origin was selected to potentially deliver VIPER in 2025.
+
+Current Status:
+VIPER's future is uncertain, but it stands ready. If deployed, it will help understand lunar water and support Artemis.
+  `,
+
+  paragraphImage: "/images/viper-rover.jpg",
+  bottomImage1: "/images/viper-bottom.jpg"
+},
+
+"europa-clipper": {
+  title: "Europa Clipper",
+  date: "October 14, 2024 – April 2030",
+  heroImage: "/images/europa-hero.jpg",
+  description: "Europa Clipper is a NASA mission to study Europa, one of Jupiter's moons, focusing on its potential subsurface ocean and habitability.",
+  crew: ["NASA Science Team", "Project Scientists", "Mission Operators"],
+  duration: "2024 – 2030",
+
+  content: `
+Mission Overview:
+Europa Clipper will orbit Jupiter and perform 49 close flybys of Europa, minimizing radiation exposure while collecting extensive data.
+
+Primary Goals:
+• Assess Europa’s habitability
+• Study ice shell and subsurface ocean
+• Analyze chemical composition of surface and potential plumes
+• Investigate geological features and activity
+• Support future Europa Lander missions
+
+Launch:
+Launched on October 14, 2024 after delays and Hurricane Milton impact.
+
+End of Mission Planning:
+Scheduled to crash into Jupiter, Ganymede, or Callisto to prevent Europa impact; disposal target: September 3, 2034.
+
+Objectives:
+Study ice shell and ocean, surface composition, geology, and detect geothermal activity and subsurface oceans.
+  `,
+
+  paragraphImage: "/images/europa-orbit.jpg",
+  objectivesImage: "/images/europa-instruments.jpg"
+},
+
+"artemis": {
+  title: "Artemis Program",
+  date: "2017 – Present",
+  heroImage: "/images/artemis-hero.jpg",
+  description: "NASA’s Artemis program aims to return humans to the Moon and establish sustainable lunar exploration, a stepping stone for Mars missions.",
+  crew: ["NASA Astronauts", "International Partners", "Commercial Providers"],
+  duration: "2017 – Present",
+
+  content: `
+Program Overview:
+Artemis is led by NASA with partners ESA, JAXA, CSA, and commercial providers. It aims to return humans to the Moon, build a lunar base near the south pole, and develop technology for Mars missions.
+
+Core Goals:
+• Return humans to the Moon, including first woman and person of color
+• Establish sustainable lunar base near south pole
+• Develop tech for crewed Mars missions
+• Expand international and commercial cooperation
+
+Key Artemis Systems:
+Space Launch System (SLS): Launches Orion and cargo beyond Earth orbit.
+Orion Spacecraft: Crew capsule for lunar orbit travel.
+Human Landing System (HLS): Transfers astronauts from lunar orbit to Moon's surface and back.
+
+Artemis Missions Timeline:
+Artemis I (2022): Uncrewed SLS & Orion test flight, orbited Moon.
+Artemis II (2026): First crewed mission, lunar flyby.
+Artemis III (2027+): First crewed lunar landing since Apollo.
+Artemis IV–VI (2028–2031): Lunar Gateway construction, repeated landings.
+Artemis VII–X (2032–2035, planned): Extended lunar missions and habitats.
+
+Commercial & International Partnerships:
+CLPS robotic missions, Gateway Logistics Services, international modules, landers, and astronauts per Artemis Accords.
+
+Why Artemis Matters:
+Testing ground for human spaceflight technologies, habitats, and operations supporting future Mars missions.
+  `,
+
+  paragraphImage: "/images/artemis-sls.jpg",
+  systemsImage: "/images/artemis-orion.jpg",
+  timelineImage: "/images/artemis-landing.jpg"
 }
+
 
 
 
