@@ -221,7 +221,7 @@ export default function SolarSystemPage() {
           <div style={{ fontSize: "44px", fontWeight: "bold", marginBottom: "20px" }}>
             {hoveredPlanet}
           </div>
-          <div style={{ fontSize: "13px", lineHeight: "1.7" }}>
+          <div style={{ fontSize: "13px", lineHeight: "1.5" }}>
             {planetDescriptions[hoveredPlanet]}
           </div>
         </div>
